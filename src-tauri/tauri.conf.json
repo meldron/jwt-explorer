@@ -17,7 +17,7 @@
         "readFile": true,
         "writeFile": true,
         "createDir": true,
-        "scope": ["$APP/*"]
+        "scope": ["$APP/secrets", "$APP/secrets/*"]
       },
       "notification": {
         "all": true
