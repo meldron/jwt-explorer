@@ -1,7 +1,7 @@
 {
     "name": "jwt-explorer",
     "version": "0.1.0",
-    "description": "",
+    "description": "An example Tauri app to explore & validate JSON Web Token (JWT)",
     "scripts": {
         "start": "vite",
         "dev": "vite",
