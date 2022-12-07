@@ -1,0 +1,32 @@
+[package]
+authors = ["Bernd Kaiser"]
+description = "An app to explore and validate JSON web tokens (JWT)"
+edition = "2021"
+license = "GPL-3.0"
+name = "jwt-explorer"
+repository = ""
+rust-version = "1.57"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.2", features = [] }
+
+[dependencies]
+jsonwebtoken = "8.1.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tauri = { version = "1.2", features = ["fs-create-dir", "fs-read-file", "fs-write-file", "notification-all", "path-all", "system-tray"] }
+tauri-egui = "0.1.1"
+
+[features]
+# by default Tauri runs in production mode
+# when `tauri dev` runs it is executed with `cargo run --no-default-features` if `devPath` is an URL
+default = ["custom-protocol"]
+# this feature is used used for production builds where `devPath` points to the filesystem
+# DO NOT remove this
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+strip = true # Automatically strip symbols from the binary.
