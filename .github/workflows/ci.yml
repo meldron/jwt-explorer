@@ -41,31 +41,31 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - name: upload deb artifact
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v3
               if: matrix.platform == 'ubuntu-22.04'
               with:
                   name: jwt-explorer_${{ env.SHA8 }}_amd64.deb
                   path: src-tauri/target/release/bundle/deb/jwt-explorer_${{ env.PACKAGE_VERSION }}_amd64.deb
             - name: upload AppImage artifact
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v3
               if: matrix.platform == 'ubuntu-22.04'
               with:
                   name: jwt-explorer_${{ env.SHA8 }}_amd64.AppImage
                   path: src-tauri/target/release/bundle/appimage/jwt-explorer_${{ env.PACKAGE_VERSION }}_amd64.AppImage
             - name: upload MSI artifact
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v3
               if: matrix.platform == 'windows-latest'
               with:
                   name: jwt-explorer_${{ env.SHA8 }}_x64_en-US.msi
                   path: src-tauri/target/release/bundle/msi/jwt-explorer_${{ env.PACKAGE_VERSION }}_x64_en-US.msi
             - name: upload app artifact
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v3
               if: matrix.platform == 'macos-latest'
               with:
                   name: jwt-explorer_${{ env.SHA8 }}.app
                   path: src-tauri/target/release/bundle/macos/jwt-explorer.app
             - name: upload dmg artifact
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v3
               if: matrix.platform == 'macos-latest'
               with:
                   name: jwt-explorer_${{ env.SHA8 }}_x64.dmg
