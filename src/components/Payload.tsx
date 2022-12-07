@@ -1,5 +1,5 @@
 import JSONEditor, { JSONEditorOptions } from "jsoneditor";
-import { createEffect, JSXElement, Show } from "solid-js";
+import { createEffect, JSXElement } from "solid-js";
 import { jwtStore } from "../stores/jwtStore";
 
 export function Payload(): JSXElement {
